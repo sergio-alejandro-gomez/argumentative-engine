@@ -1,0 +1,42 @@
+#priority NEVER 0.0
+#priority NORMALLY 0.6
+#priority USUALLY 0.7
+#priority ALMOST_ALWAYS 0.9
+#priority ALWAYS 1.0
+
+#consistency-check off
+#accrual on
+#transposes off
+
+~performSurgery(D) <- disease(D), ~urgent(D) NORMALLY.
+performSurgery(D) <- acuteDisease(D) USUALLY.
+acuteDisease(D) <- disease(D), urgent(D) ALWAYS.
+~performSurgery(D) <- 
+	acuteDisease(D), 
+	performs(M,D), 
+	doctor(M), 
+	fee(M,S), 
+	~canAfford(S) 1.0.
+performSurgery(D) <- 
+	acuteDisease(D), 
+	performs(M,D),
+	expertDoctor(M) 0.8.
+expertDoctor(M) <- doctor(M), expert(M) ALWAYS.
+
+disease(heartDisease) <- true 1.0.
+urgent(heartDisease) <- true 1.0.
+doctor(john) <- true 1.0.
+expert(john) <- true 0.8.
+fee(john, one_million) <- true 1.0.
+~canAfford(one_million) <- true 0.9.
+performs(john, heartDisease) <- true 1.0.
+
+disease(mole) <- true 1.0.
+doctor(peter) <- true 1.0.
+~urgent(mole) <- true 0.8.
+performs(peter, mole) <- true 1.0.
+
+canAfford(L) <- loanFromBank(L, B) 1.0.
+loanFromBank(L, B) <- bank(B), loan(L, B) 1.0.
+bank(city_bank) <- true 1.0.
+loan(one_million, city_bank) <- true 1.0.

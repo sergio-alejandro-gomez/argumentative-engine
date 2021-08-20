@@ -1,0 +1,21 @@
+#priority NEVER 0.0
+#priority SELDOM 0.1
+#priority RARELY 0.2
+#priority SOMETIMES 0.5
+#priority NORMALLY 0.6
+#priority USUALLY 0.7
+#priority ALMOST_ALWAYS 0.9
+#priority ALWAYS 1.0
+
+#consistency-check off
+#accrual off
+#transposes on
+
+broken_wing(tweety) <- true 0.8.
+penguin(tweety) <- true 1.0.
+pilot(tweety) <- true ALMOST_ALWAYS.
+flies(X) <- bird(X) 0.6.
+bird(X) <- penguin(X) ALWAYS.
+~flies(X) <- penguin(X) 0.8.
+~flies(X) <- bird(X), broken_wing(X) USUALLY.
+flies(X) <- pilot(X) 0.9.
