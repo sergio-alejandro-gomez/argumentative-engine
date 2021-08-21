@@ -17,3 +17,5 @@ and it is capable of showing arguments and grounded extensions graphically.
 The language for programs is enriched with pragmas for allowing the user to configure labels for 
 necessity degrees, deciding if using transposes of strict rules, performing consistency checks
 within arguments, and appeal to the use of accrual of rules for building arguments.
+
+DISCLAIMER: This application is a prototype and it must be treated as such. Use at your own risk.
