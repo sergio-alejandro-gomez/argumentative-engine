@@ -1,7 +1,7 @@
 # argumentative-engine
 An implementation of an argumentation engine of Possibilistic Defeasible Logic Programming based on Dung-semantics.
 
-In this paper, we present a tool for possibilistic logic programming.
+We present a tool for possibilistic logic programming.
 
 A demo of the tool can be watched online at https://youtu.be/joajw2hfkZg (with Spanish audio).
 
