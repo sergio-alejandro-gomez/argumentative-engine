@@ -3,7 +3,7 @@ An implementation of an argumentation engine of Possibilistic Defeasible Logic P
 
 In this paper, we present a tool for possibilistic logic programming.
 
-A demo of the tool can be watched online at https://youtu.be/joajw2hfkZg.
+A demo of the tool can be watched online at https://youtu.be/joajw2hfkZg (with Spanish audio).
 
 An executable JAR file along with the examples shown here are included. 
 
